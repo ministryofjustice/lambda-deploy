@@ -115,7 +115,7 @@ exports.handler = function(event, context) {
     var handlePromiseError = function(error, userMessage) {
         console.error(userMessage);
         console.error(error);
-        exitFailure(userMessage);
+        exitFailure(`${userMessage}: ${error.message}`);
     }
 
     var promises = [];
